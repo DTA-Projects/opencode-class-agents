@@ -167,6 +167,10 @@ I keep this config in a private git repo cloned to every machine at `~/.config/o
 - Don't point an always-on sync tool (Syncthing/OneDrive) at a git checkout of your config.
 - Before publishing a template like this one, scrub course ids, school URLs, and any personal info — this repo has none, keep it that way if you fork it.
 
+## Contributors
+
+Maintained by [@DTA-Projects](https://github.com/DTA-Projects).
+
 ## How this was built
 
 Built iteratively with opencode over a few evenings:
