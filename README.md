@@ -45,7 +45,7 @@ For scripted / no-prompt installs: `$env:SKIP_PROMPTS="1"` (Windows) or `SKIP_PR
 ┌────────────────────────────┐      ┌──────────────────────────────────────┐
 │         You ask            │      │        opencode (CLI + AI)           │
 │  "when is the calc midterm?"│      │                                      │
-└─────────────┬──────────────┘      │  agent/calculus.md  (which agent)    │
+└─────────────┬──────────────┘      │  agents/template.md (which agent)    │
               │                      │  ┌────────────────────────────────┐  │
               ▼                      │  │ The agent knows:              │  │
 ┌────────────────────────────┐      │  │  • its job (tutor a course)    │  │
@@ -67,7 +67,7 @@ For scripted / no-prompt installs: `$env:SKIP_PROMPTS="1"` (Windows) or `SKIP_PR
 ```
 
 1. `canvas.mjs` authenticates once via a `.env` file (session cookie or API token) and fetches your courses, syllabus pages, modules, assignments, and files.
-2. Each course gets an **agent file** (`agent/calculus.md`, `agent/system-administration.md`, ...) — a small markdown file with frontmatter that tells opencode when to use it, what it is, and how to touch your course.
+2. Each course gets an **agent file** (copy `agents/template.md` to `agents/<course>.md`) — a small markdown file with frontmatter that tells opencode when to use it, what it is, and how to touch your course.
 3. Because the helper turns messy Canvas HTML into readable text, the agent can answer real questions: *"what's due this week?", "explain the derivative rules from chapter 3?"* — grounded in *your* actual course content and *your* textbook.
 
 ## What's in the box
