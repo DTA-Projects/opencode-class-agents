@@ -13,6 +13,26 @@ Everything here is generic — copy it, change your school's URL and your textbo
 
 ---
 
+## Install in one command
+
+On a clean machine (git + Node.js present) the installer: backs up any existing config, clones this template into `~/.config/opencode`, re-inits it as **your own fresh git repo** (not tied to this template), scaffolds `canvas/.env` + `CONTEXT.md`, optionally installs opencode itself, and prints your next steps.
+
+**Windows (PowerShell):**
+
+```powershell
+powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/DTA-Projects/opencode-class-agents/main/install.ps1 | iex"
+```
+
+**macOS / Linux:**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/DTA-Projects/opencode-class-agents/main/install.sh | bash
+```
+
+For scripted / no-prompt installs: `$env:SKIP_PROMPTS="1"` (Windows) or `SKIP_PROMPTS=1 CONFIG_DIR=/path` (Unix). Details in [docs/SETUP.md](docs/SETUP.md).
+
+---
+
 ## How it works
 
 ```
@@ -53,23 +73,30 @@ Everything here is generic — copy it, change your school's URL and your textbo
 | `agents/*.md` | Example per-course tutor agents (with a blank `agents/template.md` to copy). |
 | `commands/sync.md`, `commands/sync-here.md` | Custom opencode `/sync` commands that run the PowerShell scripts below. |
 | `git-sync.ps1`, `git-sync-here.ps1` | One-command pull/push scripts for keeping config (and any repo) synced across machines. |
+| `install.ps1`, `install.sh` | One-command installers for a clean machine (Windows / Unix). See [Install in one command](#install-in-one-command). |
 | `opencode.jsonc` | Global opencode config: points at the `references` (textbooks) and loads `CONTEXT.md` as instructions. |
 | `CONTEXT.example.md` | Optional auto-loaded "session context" file — the rules the agent should always remember. |
 | `docs/SETUP.md` | Step-by-step install guide for a new machine. |
 
-## Quick start
+## Manual quick start
+
+> Prefer to run the one-command installer above instead? Skip straight to step 4.
 
 **Prereqs:** [opencode](https://opencode.ai/docs/), Node.js 18+, git.
 
 ```bash
 # 1. Put these files into opencode's global config directory
 git clone https://github.com/<your-user>/opencode-class-agents ~/.config/opencode
+#    (or fork this repo and clone your fork - recommended so you keep the template git.)
 
-# 2. Set up Canvas credentials (see docs/credentials)
+# 2. Create the auto-loaded session context
+cp ~/.config/opencode/CONTEXT.example.md ~/.config/opencode/CONTEXT.md
+
+# 3. Set up Canvas credentials (see docs/credentials)
 cd ~/.config/opencode/canvas
 copy .env.example .env      # then fill in CANVAS_API_BASE + cookie/token
 
-# 3. Verify the connection
+# 4. Verify the connection
 node canvas.mjs whoami
 
 # 4. Register your courses in an agent file

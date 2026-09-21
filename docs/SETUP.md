@@ -2,7 +2,29 @@
 
 Put the files in this repo into opencode's **global config directory** (`~/.config/opencode`) so every opencode session, on every machine, picks them up automatically — agents, commands, and the Canvas helper.
 
-## 1. Install prerequisites
+## Automated install (one command)
+
+Requires git and Node.js 18+ already installed. The installer backs up any existing config, clones this template, re-inits it as a fresh git repo, scaffolds `canvas/.env` and `CONTEXT.md`, and prints your next steps.
+
+**Windows (PowerShell):**
+```powershell
+powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/DTA-Projects/opencode-class-agents/main/install.ps1 | iex"
+```
+
+**macOS / Linux:**
+```bash
+curl -fsSL https://raw.githubusercontent.com/DTA-Projects/opencode-class-agents/main/install.sh | bash
+```
+
+The installer will:
+1. Install opencode itself first if it's missing (with your OK — or set `INSTALL_OPENCODE=1`).
+2. Back up an existing config to `~/.config/opencode.bak-<timestamp>` before replacing it.
+3. Ask for your Canvas base URL and (optionally) your session cookie.
+4. Verify the connection (`node canvas.mjs whoami`) when a cookie was pasted.
+
+Scripted / CI-friendly installs (no prompts): set `SKIP_PROMPTS=1`, and override the target with `CONFIG_DIR=/some/path` (Unix) or `-ConfigDir <path>` (Windows). Skip it and follow the manual steps below if you'd rather keep tight control.
+
+## Manual setup
 
 - [opencode](https://opencode.ai/docs/installation/)
 - Node.js 18+ (the Canvas helper uses `fetch`, no dependencies)
@@ -23,6 +45,12 @@ git clone https://github.com/<your-user>/opencode-class-agents "$HOME/.config/op
 ```
 
 > The target directory must be empty. Do not clone into a nested `opencode/` folder.
+>
+> Then create the auto-loaded session context:
+> ```
+> copy "%USERPROFILE%\.config\opencode\CONTEXT.example.md" "%USERPROFILE%\.config\opencode\CONTEXT.md"
+> ```
+> (`cp .../CONTEXT.example.md .../CONTEXT.md` on macOS/Linux). Edit it to match your setup — it is loaded into every session.
 
 ## 3. Add your Canvas credentials
 
