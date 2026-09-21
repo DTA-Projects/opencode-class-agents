@@ -4,7 +4,15 @@ Put the files in this repo into opencode's **global config directory** (`~/.conf
 
 ## Automated install (one command)
 
-Requires [git](https://git-scm.com/downloads) and [Node.js 18+](https://nodejs.org/en/download) already installed. The installer backs up any existing config, clones this template, re-inits it as a fresh git repo, scaffolds `canvas/.env` and `CONTEXT.md`, and prints your next steps.
+Install the prerequisites below first, then run one command — the installer backs up any existing config, clones this template, re-inits it as a fresh git repo, scaffolds `canvas/.env` and `CONTEXT.md`, and prints your next steps.
+
+**Prerequisite installers** (install these first if you don't have them yet):
+
+- [Install git](https://git-scm.com/downloads) (Windows/macOS/Linux)
+- [Install Node.js 18+](https://nodejs.org/en/download) (the Canvas helper needs Node)
+- [Install opencode](https://opencode.ai/docs/installation/) (also offered by the installers below)
+
+Then run the one-liner for your OS:
 
 **Windows (PowerShell):**
 ```powershell
@@ -24,11 +32,11 @@ The installer will:
 
 Scripted / CI-friendly installs (no prompts): set `SKIP_PROMPTS=1`, and override the target with `CONFIG_DIR=/some/path` (Unix) or `-ConfigDir <path>` (Windows). Skip it and follow the manual steps below if you'd rather keep tight control.
 
-## Manual setup
+## 1. Prerequisites
 
-- [opencode](https://opencode.ai/docs/installation/)
-- [Node.js 18+](https://nodejs.org/en/download) (the Canvas helper uses `fetch`, no dependencies)
-- [git](https://git-scm.com/downloads) (any platform), plus `gh` if you want to create the remote repos below
+- [Install opencode](https://opencode.ai/docs/installation/)
+- [Install Node.js 18+](https://nodejs.org/en/download) (the Canvas helper uses `fetch`, no dependencies)
+- [Install git](https://git-scm.com/downloads) (any platform), plus `gh` if you want to create the remote repos below
 
 ## 2. Clone the config into place
 
