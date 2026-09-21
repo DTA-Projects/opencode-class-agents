@@ -4,7 +4,7 @@ Put the files in this repo into opencode's **global config directory** (`~/.conf
 
 ## Automated install (one command)
 
-Requires git and Node.js 18+ already installed. The installer backs up any existing config, clones this template, re-inits it as a fresh git repo, scaffolds `canvas/.env` and `CONTEXT.md`, and prints your next steps.
+Requires [git](https://git-scm.com/downloads) and [Node.js 18+](https://nodejs.org/en/download) already installed. The installer backs up any existing config, clones this template, re-inits it as a fresh git repo, scaffolds `canvas/.env` and `CONTEXT.md`, and prints your next steps.
 
 **Windows (PowerShell):**
 ```powershell
@@ -27,8 +27,8 @@ Scripted / CI-friendly installs (no prompts): set `SKIP_PROMPTS=1`, and override
 ## Manual setup
 
 - [opencode](https://opencode.ai/docs/installation/)
-- Node.js 18+ (the Canvas helper uses `fetch`, no dependencies)
-- git (any platform), plus `gh` if you want to create the remote repos below
+- [Node.js 18+](https://nodejs.org/en/download) (the Canvas helper uses `fetch`, no dependencies)
+- [git](https://git-scm.com/downloads) (any platform), plus `gh` if you want to create the remote repos below
 
 ## 2. Clone the config into place
 

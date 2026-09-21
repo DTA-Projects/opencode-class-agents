@@ -15,7 +15,7 @@ Everything here is generic — copy it, change your school's URL and your textbo
 
 ## Install in one command
 
-On a clean machine (git + Node.js present) the installer: backs up any existing config, clones this template into `~/.config/opencode`, re-inits it as **your own fresh git repo** (not tied to this template), scaffolds `canvas/.env` + `CONTEXT.md`, optionally installs opencode itself, and prints your next steps.
+On a clean machine ([git](https://git-scm.com/downloads) + [Node.js 18+](https://nodejs.org/en/download) present) the installer: backs up any existing config, clones this template into `~/.config/opencode`, re-inits it as **your own fresh git repo** (not tied to this template), scaffolds `canvas/.env` + `CONTEXT.md`, optionally installs opencode itself, and prints your next steps.
 
 **Windows (PowerShell):**
 
@@ -30,6 +30,12 @@ curl -fsSL https://raw.githubusercontent.com/DTA-Projects/opencode-class-agents/
 ```
 
 For scripted / no-prompt installs: `$env:SKIP_PROMPTS="1"` (Windows) or `SKIP_PROMPTS=1 CONFIG_DIR=/path` (Unix). Details in [docs/SETUP.md](docs/SETUP.md).
+
+**Prerequisite installers** (if you don't have them yet):
+
+- [Install git](https://git-scm.com/downloads) (Windows/macOS/Linux)
+- [Install Node.js 18+](https://nodejs.org/en/download) (the Canvas helper needs Node)
+- [Install opencode](https://opencode.ai/docs/installation/) (also offered by the installers below)
 
 ---
 
@@ -82,7 +88,7 @@ For scripted / no-prompt installs: `$env:SKIP_PROMPTS="1"` (Windows) or `SKIP_PR
 
 > Prefer to run the one-command installer above instead? Skip straight to step 4.
 
-**Prereqs:** [opencode](https://opencode.ai/docs/), Node.js 18+, git.
+**Prereqs:** [opencode](https://opencode.ai/docs/), [Node.js 18+](https://nodejs.org/en/download), [git](https://git-scm.com/downloads).
 
 ```bash
 # 1. Put these files into opencode's global config directory
