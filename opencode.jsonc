@@ -1,0 +1,15 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "references": {
+    "textbooks": {
+      "path": "~/Documents/++Textbooks",
+      "description": "Course textbooks. One PDF per course, referenced by your class agents. Modern Database Management is not used."
+    },
+    "canvas": {
+      "path": "~/.config/opencode/canvas",
+      "description": "Canvas API helper script and credentials (canvas.mjs, .env). Run node canvas.mjs commands to fetch course pages, modules, assignments, and files.",
+      "hidden": true
+    }
+  },
+  "instructions": ["./CONTEXT.md"]
+}

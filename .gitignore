@@ -1,0 +1,8 @@
+# Secrets — never commit.
+canvas/.env
+
+# Local install artifacts (opencode config packages).
+node_modules
+package.json
+package-lock.json
+bun.lock
